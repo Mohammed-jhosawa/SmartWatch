@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Watch Project</title>
+
+
+    <style>
+        body {
+            background-color: #13bb98;
+            justify-content: center;
+        }
+
+        #a {
+            position: absolute;
+            top: 54%;
+            left: 230px;
+            opacity: 50%;
+            border-radius: 28%;
+            height: 30px;
+            width: 15px;
+            background-color: #020202
+        }
+
+        #d {
+            position: absolute;
+            top: 60%;
+            left: 225px;
+            opacity: 50%;
+            border-radius: 10%;
+            height: 30px;
+            width: 15px;
+            background-color: #020202
+        }
+
+        #b {
+            position: absolute;
+            top: 50%;
+            left: 100px;
+            /* opacity: 50%; */
+            border-radius: 10px;
+            height: 150px;
+            width: 135px;
+
+            background-color: #d3d3d3;
+        }
+
+        #c {
+            position: absolute;
+            top: 50.5%;
+            left: 105px;
+            /* opacity: 50%; */
+            border-radius: 10px;
+            height: 139px;
+            width: 125px;
+            background-color: #242729
+        }
+
+        .m1 {
+            top: 160px;
+            position: relative;
+            left: 120px;
+            transform: rotate(deg);
+        }
+
+        .m2 {
+            top: 200px;
+            position: relative;
+            left: 120px;
+
+            transform: rotate(1deg);
+
+
+        }
+        #mjImage{
+            position: absolute;
+            top: 50.5%;
+            left: 105px;
+            /* opacity: 50%; */
+            border-radius: 10px;
+            height: 139px;
+            width: 125px;
+            visibility: hidden;
+        }
+        #mjVideo{
+            position: absolute;
+            top: 50.5%;
+            left: 105px;
+            /* opacity: 50%; */
+            border-radius: 10px;
+            height: 139px;
+            width: 125px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="m1">
+        <img src="Presentation1-removebg-preview.png" alt="" height="240" width="80">
+    </div>
+    <div class="m2">
+        <img src="uo-removebg-preview.png" alt="" height="240" width="80">
+    </div>
+
+
+    <div id="d"></div>
+    <div id="a" onclick="image()"></div>
+    <div id="b"><iframe width="2" height="2" src="https://www.youtube.com/embed/S6jCd2hSVKA"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe></div>
+    <div id="c"> </div>
+    <img id="mjImage" src="e3dd720b-f0dc-467e-a245-ee00fff5f285.jpg" alt="">
+  
+    <iframe id="mjVideo" height="300px" src="https://www.youtube.com/embed/S6jCd2hSVKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    <script>
+        var count = 0;
+        function image() {
+            count++;
+            console.log(count)
+            let displayImg = document.getElementById("mjImage")
+            let displayVid = document.getElementById("mjVideo")
+
+            if(count < 2){
+                displayImg.style.visibility = "visible"
+                navigator.vibrate(75)
+                count++;
+                console.log(count)
+            }else if(count < 5){         navigator.vibrate(75)
+                displayImg.style.visibility = "hidden"
+                displayVid.style.display = "block"
+                
+                count++;
+                console.log(count)
+                
+            }else if(count < 8){
+                navigator.vibrate(75)
+                displayImg.style.visibility = "hidden"
+                displayVid.style.display = "none"
+                count = 0;
+                console.log(count)
+
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
